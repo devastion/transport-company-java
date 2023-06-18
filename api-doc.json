@@ -1,0 +1,492 @@
+{
+  "v": 1,
+  "folders": [
+    {
+      "name": "Vehicles",
+      "v": 1,
+      "folders": [],
+      "requests": [
+        {
+          "params": [],
+          "preRequestScript": "",
+          "headers": [],
+          "method": "GET",
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "name": "listAllVehicles",
+          "endpoint": "http://localhost:8080/api/vehicles",
+          "v": "1",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "testScript": ""
+        },
+        {
+          "endpoint": "http://localhost:8080/api/vehicles",
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "name": "addVehicle",
+          "preRequestScript": "",
+          "testScript": "",
+          "params": [],
+          "headers": [],
+          "v": "1",
+          "method": "POST",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"license\": \"C\",\n  \"type\": \"CARGO\",\n  \"capacity\": 3200,\n  \"company\": {\n    \"id\": 1,\n    \"name\": \"Test Company\"\n  }\n}"
+          }
+        },
+        {
+          "v": "1",
+          "name": "updateVehicle",
+          "preRequestScript": "",
+          "testScript": "",
+          "params": [],
+          "method": "PUT",
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "headers": [],
+          "body": {
+            "body": "{\n  \"license\": \"C\",\n  \"type\": \"PASSENGER\",\n  \"capacity\": 3500\n}",
+            "contentType": "application/json"
+          },
+          "endpoint": "http://localhost:8080/api/vehicles/1"
+        },
+        {
+          "preRequestScript": "",
+          "method": "DELETE",
+          "testScript": "",
+          "v": "1",
+          "headers": [],
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "params": [],
+          "auth": {
+            "authActive": true,
+            "authType": "none"
+          },
+          "endpoint": "http://localhost:8080/api/vehicles/1",
+          "name": "deleteVehicle"
+        },
+        {
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "params": [],
+          "auth": {
+            "authActive": true,
+            "authType": "none"
+          },
+          "preRequestScript": "",
+          "name": "byCompanyId",
+          "headers": [],
+          "testScript": "",
+          "v": "1",
+          "endpoint": "http://localhost:8080/api/vehicles/1",
+          "method": "GET"
+        }
+      ]
+    },
+    {
+      "v": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "testScript": "",
+          "headers": [],
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "endpoint": "http://localhost:8080/api/companies",
+          "preRequestScript": "",
+          "name": "listAllCompanies",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "params": [],
+          "v": "1"
+        },
+        {
+          "params": [],
+          "v": "1",
+          "endpoint": "http://localhost:8080/api/companies",
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "method": "POST",
+          "headers": [],
+          "name": "addCompany",
+          "testScript": "",
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n  \"name\": \"Test Company\"\n}"
+          },
+          "preRequestScript": ""
+        },
+        {
+          "params": [],
+          "testScript": "",
+          "headers": [],
+          "name": "deleteCompany",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "v": "1",
+          "endpoint": "http://localhost:8080/api/companies/1",
+          "preRequestScript": "",
+          "method": "DELETE",
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          }
+        },
+        {
+          "headers": [],
+          "endpoint": "http://localhost:8080/api/companies/1",
+          "params": [],
+          "preRequestScript": "",
+          "v": "1",
+          "body": {
+            "body": "{\n  \"id\": 1,\n  \"name\": \"Test Company 1\"\n}",
+            "contentType": "application/json"
+          },
+          "testScript": "",
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "method": "PUT",
+          "name": "updateCompany"
+        }
+      ],
+      "folders": [],
+      "name": "Companies"
+    },
+    {
+      "requests": [
+        {
+          "headers": [],
+          "method": "GET",
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "name": "listAllEmployees",
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "endpoint": "http://localhost:8080/api/employees",
+          "v": "1",
+          "preRequestScript": "",
+          "testScript": "",
+          "params": []
+        },
+        {
+          "body": {
+            "body": "{\n  \"name\": \"Joe\",\n  \"license\": \"C\",\n  \"company\": {\n    \"id\": 1,\n    \"name\": \"Test Company\"\n  },\n  \"salary\": 1502.54\n}",
+            "contentType": "application/json"
+          },
+          "auth": {
+            "authActive": true,
+            "authType": "none"
+          },
+          "v": "1",
+          "headers": [],
+          "method": "POST",
+          "testScript": "",
+          "preRequestScript": "",
+          "endpoint": "http://localhost:8080/api/employees",
+          "params": [],
+          "name": "addEmployee"
+        },
+        {
+          "headers": [],
+          "body": {
+            "body": null,
+            "contentType": null
+          },
+          "testScript": "",
+          "method": "DELETE",
+          "v": "1",
+          "name": "removeEmployee",
+          "preRequestScript": "",
+          "endpoint": "http://localhost:8080/api/employees/1",
+          "auth": {
+            "authActive": true,
+            "authType": "none"
+          },
+          "params": []
+        },
+        {
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "name": "updateEmployee",
+          "headers": [],
+          "params": [],
+          "endpoint": "http://localhost:8080/api/employees/2",
+          "preRequestScript": "",
+          "v": "1",
+          "method": "PUT",
+          "testScript": "",
+          "body": {
+            "body": "{\n    \"name\": \"Joe\",\n    \"license\": \"C\",\n    \"company\": {\n      \"id\": 1,\n      \"name\": \"Test Company\"\n    },\n    \"salary\": 1503\n}",
+            "contentType": "application/json"
+          }
+        },
+        {
+          "testScript": "",
+          "method": "GET",
+          "endpoint": "http://localhost:8080/api/employees/1",
+          "headers": [],
+          "v": "1",
+          "name": "findCompany",
+          "preRequestScript": "",
+          "body": {
+            "body": null,
+            "contentType": null
+          },
+          "auth": {
+            "authActive": true,
+            "authType": "none"
+          },
+          "params": []
+        }
+      ],
+      "name": "Employees",
+      "folders": [],
+      "v": 1
+    },
+    {
+      "v": 1,
+      "requests": [
+        {
+          "method": "GET",
+          "params": [],
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "headers": [],
+          "preRequestScript": "",
+          "name": "listAllClients",
+          "auth": {
+            "authActive": true,
+            "authType": "none"
+          },
+          "testScript": "",
+          "endpoint": "http://localhost:8080/api/clients",
+          "v": "1"
+        },
+        {
+          "auth": {
+            "authActive": true,
+            "authType": "none"
+          },
+          "body": {
+            "body": "{\n  \"name\": \"Mike\",\n  \"company\":   {\n    \"id\": 1,\n    \"name\": \"Test Company\"\n  }\n}",
+            "contentType": "application/json"
+          },
+          "v": "1",
+          "method": "POST",
+          "params": [],
+          "testScript": "",
+          "name": "addClient",
+          "preRequestScript": "",
+          "headers": [],
+          "endpoint": "http://localhost:8080/api/clients"
+        },
+        {
+          "auth": {
+            "authActive": true,
+            "authType": "none"
+          },
+          "headers": [],
+          "v": "1",
+          "endpoint": "http://localhost:8080/api/clients/1",
+          "body": {
+            "contentType": "application/json",
+            "body": "  {\n  \"id\": 1,\n  \"name\": \"Mikee\",\n  \"company\": {\n    \"id\": 1,\n    \"name\": \"Test Company\"\n  }\n  }"
+          },
+          "params": [],
+          "method": "PUT",
+          "testScript": "",
+          "preRequestScript": "",
+          "name": "updateClient"
+        },
+        {
+          "method": "DELETE",
+          "body": {
+            "body": null,
+            "contentType": null
+          },
+          "params": [],
+          "name": "deleteClient",
+          "preRequestScript": "",
+          "headers": [],
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "testScript": "",
+          "endpoint": "http://localhost:8080/api/clients/1",
+          "v": "1"
+        },
+        {
+          "preRequestScript": "",
+          "testScript": "",
+          "headers": [],
+          "body": {
+            "body": null,
+            "contentType": null
+          },
+          "name": "findAllByCompanyId",
+          "method": "GET",
+          "endpoint": "http://localhost:8080/api/clients/1",
+          "v": "1",
+          "params": [],
+          "auth": {
+            "authActive": true,
+            "authType": "none"
+          }
+        }
+      ],
+      "folders": [],
+      "name": "Clients"
+    },
+    {
+      "folders": [],
+      "v": 1,
+      "name": "Transports",
+      "requests": [
+        {
+          "v": "1",
+          "params": [],
+          "endpoint": "http://localhost:8080/api/transports",
+          "testScript": "",
+          "headers": [],
+          "auth": {
+            "authActive": true,
+            "authType": "none"
+          },
+          "body": {
+            "body": null,
+            "contentType": null
+          },
+          "method": "GET",
+          "preRequestScript": "",
+          "name": "listAllTransports"
+        },
+        {
+          "method": "POST",
+          "name": "addTransport",
+          "testScript": "",
+          "v": "1",
+          "endpoint": "http://localhost:8080/api/transports",
+          "auth": {
+            "authActive": true,
+            "authType": "none"
+          },
+          "params": [],
+          "body": {
+            "body": "{\n  \"departure\": \"Paris\",\n  \"arrival\": \"London\",\n  \"price\": 50,\n  \"transport\": \"PASSENGER\",\n  \"size\": 25,\n  \"company\":   {\n    \"id\": 1,\n    \"name\": \"Test Company\"\n  },\n  \"employee\":   {\n    \"id\": 1,\n    \"name\": \"Joe\",\n    \"license\": \"C\",\n    \"company\": {\n      \"id\": 1,\n      \"name\": \"Test Company\"\n    },\n    \"salary\": 1502.54\n  },\n  \"status\": false,\n  \"clients\": [{\n  \"id\": 1,\n  \"name\": \"Mike\",\n  \"company\": {\n    \"id\": 1,\n    \"name\": \"Test Company\"\n  }\n}]\n}",
+            "contentType": "application/json"
+          },
+          "headers": [],
+          "preRequestScript": ""
+        },
+        {
+          "preRequestScript": "",
+          "body": {
+            "body": null,
+            "contentType": null
+          },
+          "headers": [],
+          "params": [],
+          "testScript": "",
+          "name": "removeTransport",
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "endpoint": "http://localhost:8080/api/transports/1",
+          "v": "1",
+          "method": "DELETE"
+        },
+        {
+          "params": [],
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "v": "1",
+          "headers": [],
+          "body": {
+            "body": "  {\n    \"id\": 2,\n    \"departure\": \"Sofia\",\n    \"arrival\": \"London\",\n    \"price\": 50.00,\n    \"transport\": \"PASSENGER\",\n    \"size\": 25,\n    \"company\": {\n      \"id\": 1,\n      \"name\": \"Test Company\"\n    },\n    \"employee\": {\n      \"id\": 1,\n      \"name\": \"Joe\",\n      \"license\": \"C\",\n      \"company\": {\n        \"id\": 1,\n        \"name\": \"Test Company\"\n      },\n      \"salary\": 1502.54\n    },\n    \"status\": false\n  }",
+            "contentType": "application/json"
+          },
+          "name": "updateTransport",
+          "preRequestScript": "",
+          "method": "PUT",
+          "testScript": "",
+          "endpoint": "http://localhost:8080/api/transports/1"
+        },
+        {
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "headers": [],
+          "name": "listAllTransportByCompanyId",
+          "v": "1",
+          "endpoint": "http://localhost:8080/api/transports/1",
+          "preRequestScript": "",
+          "params": [],
+          "body": {
+            "body": null,
+            "contentType": null
+          },
+          "method": "GET",
+          "testScript": ""
+        },
+        {
+          "testScript": "",
+          "params": [],
+          "name": "listAllTransportByCompanyIdAndStatus",
+          "body": {
+            "body": null,
+            "contentType": null
+          },
+          "auth": {
+            "authType": "none",
+            "authActive": true
+          },
+          "endpoint": "http://localhost:8080/api/transports/1/false",
+          "preRequestScript": "",
+          "headers": [],
+          "v": "1",
+          "method": "GET"
+        }
+      ]
+    }
+  ],
+  "name": "Transport Company Spring",
+  "requests": []
+}

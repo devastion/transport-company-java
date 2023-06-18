@@ -11,4 +11,6 @@ public interface TransportRepository extends JpaRepository<Transport, Long> {
     List<Transport> findAllByCompany_Id(long company_id);
 
     List<Transport> findAllByCompany_IdAndStatus(long company_id, boolean status);
+
+    List<Transport> findByOrderByDeparture();
 }

@@ -50,4 +50,10 @@ public class TransportController {
         List<Transport> allByCompanyIdAndFinished = transportService.findByCompanyIdAndStatus(companyId, finished);
         return new ResponseEntity<>(allByCompanyIdAndFinished, HttpStatus.OK);
     }
+
+    @GetMapping("orderByDeparture")
+    public ResponseEntity<List<Transport>> orderByDeparture() {
+        List<Transport> transports = transportService.findByDeparture();
+        return new ResponseEntity<>(transports, HttpStatus.OK);
+    }
 }

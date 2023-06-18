@@ -16,4 +16,6 @@ public interface TransportService {
     List<Transport> findByCompanyId(long companyId);
 
     List<Transport> findByCompanyIdAndStatus(long companyId, boolean status);
+
+    List<Transport> findByDeparture();
 }

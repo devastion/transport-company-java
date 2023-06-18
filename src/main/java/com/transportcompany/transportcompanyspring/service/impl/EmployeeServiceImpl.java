@@ -44,4 +44,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> findByCompanyId(long company_id) {
         return employeeRepository.findAllByCompany_Id(company_id);
     }
+
+    @Override
+    public List<Employee> orderByLicense() {
+        return employeeRepository.findByOrderByLicenseAsc();
+    }
 }

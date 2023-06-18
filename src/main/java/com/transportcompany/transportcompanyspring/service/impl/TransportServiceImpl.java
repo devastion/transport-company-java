@@ -53,4 +53,9 @@ public class TransportServiceImpl implements TransportService {
     public List<Transport> findByCompanyIdAndStatus(long companyId, boolean status) {
         return transportRepository.findAllByCompany_IdAndStatus(companyId, status);
     }
+
+    @Override
+    public List<Transport> findByDeparture() {
+        return transportRepository.findByOrderByDeparture();
+    }
 }

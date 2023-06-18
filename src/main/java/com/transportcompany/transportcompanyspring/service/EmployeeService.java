@@ -14,4 +14,6 @@ public interface EmployeeService {
     List<Employee> listAllEmployees();
 
     List<Employee> findByCompanyId(long companyId);
+
+    List<Employee> orderByLicense();
 }

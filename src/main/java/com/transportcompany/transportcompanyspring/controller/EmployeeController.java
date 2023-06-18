@@ -45,4 +45,10 @@ public class EmployeeController {
         List<Employee> employees = employeeService.findByCompanyId(companyId);
         return new ResponseEntity<>(employees, HttpStatus.OK);
     }
+
+    @GetMapping("orderByLicense")
+    public ResponseEntity<List<Employee>> orderByLicense() {
+        List<Employee> employees = employeeService.orderByLicense();
+        return new ResponseEntity<>(employees, HttpStatus.OK);
+    }
 }

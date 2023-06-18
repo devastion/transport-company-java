@@ -104,7 +104,7 @@ public class Seeder implements ApplicationRunner {
         transportList.add(new Transport("Sofia", "Paris", new BigDecimal("5"), TransportType.CARGO, 500, companyList.get(0), employeeList1.get(1), false, cargoList1));
         transportList.add(new Transport("Plovdiv", "Burgas", new BigDecimal("50"), TransportType.PASSENGER, 15, companyList.get(1), employeeList2.get(0), false, clientList2));
         transportList.add(new Transport("London", "Paris", new BigDecimal("5"), TransportType.CARGO, 500, companyList.get(1), employeeList2.get(1), false, cargoList2));
-        transportList.add(new Transport("Vidin", "Maroco", new BigDecimal("150"), TransportType.PASSENGER, 15, companyList.get(2), employeeList3.get(0), false, clientList3));
+        transportList.add(new Transport("Vidin", "Maroco", new BigDecimal("150"), TransportType.PASSENGER, 15, companyList.get(2), employeeList3.get(0), true, clientList3));
         transportList.add(new Transport("London", "Paris", new BigDecimal("5"), TransportType.CARGO, 500, companyList.get(2), employeeList3.get(1), false, cargoList3));
 
         transportList.forEach(transportService::addTransport);
